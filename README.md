@@ -23,14 +23,21 @@ cp kernel.elf iso/boot/
 
 The ISO image can then be generated with the following command:
 ```
-genisoimage -R \
--b boot/grub/stage2_eltorito \
--no-emul-boot \
--boot-load-size 4 \
--A os \
--input-charset utf8 \
--quiet \
--boot-info-table \
--o os.iso \
-iso
+genisoimage -R                              \
+            -b boot/grub/stage2_eltorito    \
+            -no-emul-boot                   \
+            -boot-load-size 4               \
+            -A os                           \
+            -input-charset utf8             \
+            -quiet                          \
+            -boot-info-table                \
+            -o os.iso                       \
+            iso
+```
+
+Compiling C code.
+The flags used for compiling the C code are:
+```
+-m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles
+-nodefaultlibs
 ```
