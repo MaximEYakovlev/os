@@ -41,3 +41,8 @@ The flags used for compiling the C code are:
 -m32 -nostdlib -nostdinc -fno-builtin -fno-stack-protector -nostartfiles
 -nodefaultlibs
 ```
+
+When writing C programs turn on all warnings and treat warnings as errors:
+```
+-Wall -Wextra -Werror
+```
